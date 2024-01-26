@@ -4,6 +4,7 @@ const gridElement = document.getElementById('grid');
 // Variables globales
 let height = 10;
 let width = 10;
+let nbBombs = 10;
 let grid;
 
 // fonctions
@@ -16,7 +17,20 @@ const init = () => {
             row.push(0);
         }
     }
+    addBombs();
     displayGrid();
+}
+
+const addBombs = () => {
+    let addedBombs = 0;
+    while(addedBombs < nbBombs) {
+        const x = Math.floor(Math.random() * width);
+        const y = Math.floor(Math.random() * height);
+        if(grid[y][x] !== '*') {
+            grid[y][x] = '*';
+            addedBombs++;
+        } 
+    }
 }
 
 const displayGrid = () => {
