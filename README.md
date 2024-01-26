@@ -48,3 +48,6 @@ _Voir les changements dans les détails du projet_
 git log
 ```
 _Voir l'historique des changements_ 
+
+### .gitignore
+_fichier qui permet de définir les fichiers qui ne seront jamais historisés_
