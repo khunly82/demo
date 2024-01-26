@@ -1,5 +1,8 @@
 // DOM
 const gridElement = document.getElementById('grid');
+const changeButton = document.getElementById('changeOptions');
+
+
 
 // Variables globales
 let height = 10;
@@ -34,6 +37,7 @@ const addBombs = () => {
 }
 
 const displayGrid = () => {
+    gridElement.innerHTML = '';
     gridElement.append(...grid.map(createHtmlRow));
 }
 
@@ -51,4 +55,28 @@ const createHtmlCell = (cell) => {
     return div;
 }
 
+const changeOptions = () => {
+    const h = prompt('Entrez la hauteur');
+    const w = prompt('Entrez la largeur');
+    const b = prompt('Entrez le nombre de bombes');
+
+    height = parseInt(h);
+    width = parseInt(w);
+    nbBombs = parseInt(b);
+    init();
+}
+
+changeButton.addEventListener('click', changeOptions);
+
 init();
+
+
+
+
+
+
+
+
+
+
+
